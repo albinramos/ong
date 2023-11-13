@@ -1,0 +1,17 @@
+extends ../layout   
+
+block content
+    h1 Iniciar Sesión
+    if error 
+        p(class="error")= error
+    div
+        form(action="/login", method="post")
+            label(for="name") Name
+            input(type="text", name="name", id="name")
+            label(for="password") Password
+            input(type="password", name="password", id="password")
+            input(type="submit", value="Login")
+            
+    div
+        p You dont have an account?
+        a(href="/register") Register

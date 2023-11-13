@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    h1 Register
+    if error 
+        p(class="error")=error 
+
+    div
+     form(action="/register", method="post")
+        label(for="name") Name 
+        input(type="text", name="name", id="name")
+        label(for="role") Role
+        select#role-input( name="role")
+            option(value='0', selected= true) -- Select --
+            option(value='user', selected= false) user 
+            option(value='owner', selected= false) owner
+        label#org_label.hidden(for="organization_name") Organization Name
+        input#org_input.hidden(type="text", name="organization_name")
+        label(for="email") Email
+        input(type="email", name="email", id="email")
+        label(for="password") Password
+        input(type="password", name="password", id="password")
+        label(for="passwordConfirm") Repetir contraseña
+        input(type="password", name="passwordConfirm", id="passwordConfirm")
+        input.button-class(type="submit", value="Register")
