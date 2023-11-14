@@ -2,8 +2,6 @@
 import bcrypt from "bcrypt";
 import userModel from "../../models/userModel.js";
 
-
-
 const login = async(req,res) => {
     const {email,password} = req.body;
     try{

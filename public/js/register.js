@@ -1,4 +1,4 @@
-console.log("register");
+//console.log("register");
 
 document.getElementById("role-input").addEventListener("change", function (event) {
     if(event.target.value === "owner"){

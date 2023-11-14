@@ -5,12 +5,12 @@ block content
     if error 
         p(class="error")= error
     div
-        form(action="/login", method="post")
-            label(for="name") Name
-            input(type="text", name="name", id="name")
-            label(for="password") Password
+        form.login-form(action="/login", method="post")
+            label.label-email-login(for="name") Email
+            input(type="email", name="email", id="email")
+            label.label-password-login(for="password") Password
             input(type="password", name="password", id="password")
-            input(type="submit", value="Login")
+            input.submit-login(type="submit", value="Login")
             
     div
         p You dont have an account?

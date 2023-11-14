@@ -1,4 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;600;700&display=swap');
 
 .hidden{
     display: none;
 }
+
+body{
+    background-color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#email, #password{
+    margin-bottom: 10px;
+}
+
+.label-email-login, .label-password-login{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.submit-login{
+    width: 30%;
+    margin: auto;
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    padding-right: 10px;
+}
+
