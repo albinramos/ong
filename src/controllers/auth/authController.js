@@ -30,8 +30,8 @@ const loginForm = (req,res) => {
 }
 
 const register = async(req,res) => {
-    const {name,email,password,role} = req.body;
-    if(!name || !email || !password || !role){
+    const {name,email,password,role,passwordConfirm} = req.body;
+    if(!name || !email || !password || !role || !passwordConfirm){
         const errorUri = encodeURIComponent("Todos los campos son obligatorios");
         return res.redirect("/register?error=" + errorUri);
     }
