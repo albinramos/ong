@@ -9,6 +9,11 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
+.title{
+    font-size: 50px;
+    text-align: center;
+}
+
 .login-form{
     display: flex;
     flex-direction: column;
@@ -32,12 +37,38 @@ body{
 }
 
 input{
-    height: 30px;
+    height: 35px;
     border-radius: 5px;
 }
 
 a{
     text-decoration: none;
     padding-right: 10px;
+}
+
+.tr-tr{
+    padding: 10px;
+}
+
+#join{
+    text-align: center;
+
+}
+
+thead{
+    width: 10%;
+}
+
+.th-th{
+    font-size: 15px;
+    width: 10%;
+}
+
+/* .tr-tr{
+    font-size: 20px;
+} */
+
+td{
+    width:10%;
 }
 

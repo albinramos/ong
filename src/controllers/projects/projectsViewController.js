@@ -4,7 +4,7 @@ import projectsController from "./projectsController.js";
     const errorMessage = req.query.error;
     const q = req.query.q;
     const [error, projects] = await projectsController.getAll();
-    projectsController.getAll(q);
+    projectsController.getAll();
     res.render("projects/list",{error,projects});
     //res.json(projects);
 }

@@ -1,21 +1,22 @@
 extends ../layout
 
 block content 
-    h1 Projects 
+    h1.title Projects 
     if error 
         h2 No se ha podido recuperar el historial
     else if projects 
         ul 
             table 
                 thead 
-                    th Name:
-                    th Description:
-                    th Start Date:
-                    th End Date:
+                    th.th-th Name:
+                    th.th-th Description:
+                    th.th-th Start Date:
+                    th.th-th End Date:
                 tbody
                     each project in projects 
-                        tr
+                        tr.tr-tr
                             td= project.name
                             td= project.description
                             td= project.start_date
                             td= project.end_date
+                                input(type="submit", value="Join", id="join")

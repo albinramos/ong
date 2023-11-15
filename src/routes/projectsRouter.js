@@ -10,4 +10,6 @@ router.get("/list",(req,res)=>{
     projectsViewController.getAll(req,res);
 });
 
+
+
 export default router;

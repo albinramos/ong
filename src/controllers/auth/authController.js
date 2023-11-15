@@ -12,8 +12,7 @@ const login = async(req,res) => {
         const hash = user.password;
 
         if(await bcrypt.compare(password,hash)){
-            req.session.user_id = user.id
-            req.session.user_role = user.role;
+            req.session.user = {id:user.id, role:user.role}
         } else {
             throw new Error("Contraseña errónea")
         }   
