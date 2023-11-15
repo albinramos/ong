@@ -20,7 +20,7 @@ const projectModel = sequelize.define("projects",
         allowNull:false,
 
     },
-    initial_date: {
+    start_date: {
         type: DataTypes.DATE,
         allowNull:false,
     },

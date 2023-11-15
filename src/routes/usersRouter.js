@@ -1,33 +1,33 @@
 import { Router } from "express";
 
-import usersViewController from "../controllers/users/userController.js";
-import {isAuthenticated,isAdmin} from "../middlewares/authMiddleware.js";
+import userViewController from "../controllers/users/userController.js";
+import {isAuthenticated} from "../middlewares/authMiddleware.js";
 
 
 const router = Router();
 
 router.get("/",isAuthenticated, (req,res)=>{
-    usersViewController.getAll(req,res);
+    userViewController.getAll(req,res);
 });
 
-router.get("/new",usersViewController.createForm);
+router.get("/new",userViewController.createForm);
 
 router.get("/:id",isAuthenticated,(req,res)=>{
-    usersViewController.getById(req,res);
+    userViewController.getById(req,res);
 });
 
 router.post("/",(req,res)=>{
-    usersViewController.create(req,res);
+    userViewController.create(req,res);
 });
 
-router.get("/:id/edit",usersViewController.updateForm);
+router.get("/:id/edit",userViewController.updateForm);
 
 router.post("/:id",(req,res)=>{
-    usersViewController.update(req,res);
+    userViewController.update(req,res);
 });
 
 router.get("/:id/delete",(req,res)=>{
-    usersViewController.remove(req,res);
+    userViewController.remove(req,res);
 });
 
 export default router;

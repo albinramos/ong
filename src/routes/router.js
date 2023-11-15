@@ -6,7 +6,7 @@ const router = Router();
 router.use("/", authRouter);
 
 router.get("/", (req,res) => {
-    res.render("index");
+    res.render("home");
 })
 
 export default router;

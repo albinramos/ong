@@ -2,12 +2,7 @@ import projectModel from "../../models/projectModel.js";
 import {Op} from "sequelize";
 
 
-const getAll = async(q=null) => {
-    const options = {};
-
-    if(q) {
-        options.where = { name:{ [Op.like]: `%${q}%` },}
-    }
+const getAll = async(id) => {
     try{
         const projects = await projectModel.findAll(options);
         return [null, projects];
@@ -25,13 +20,13 @@ const getById = async (id) => {
         return [e.message, null];
     }
 }
-const create = async (name, description, initial_date, end_date) => {
-    if (name === undefined || description === undefined || initial_date === undefined || end_date === undefined) {
-        const error = "name, description, initial_date, end_date deben ser definidos";
+const create = async (name, description, start_date, end_date) => {
+    if (name === undefined || description === undefined || start_date === undefined || end_date === undefined) {
+        const error = "name, description, start_date, end_date deben ser definidos";
         return [error, null];
     }
     try{
-        const project = await userModel.create({ame, description, initial_date, end_date});
+        const project = await userModel.create({name, description, start_date, end_date});
         return [null,project];
     }
     catch(e){
@@ -39,14 +34,14 @@ const create = async (name, description, initial_date, end_date) => {
     }
 }
 
-const update = async(name, description, initial_date, end_date) => {
+const update = async(name, description, start_date, end_date) => {
     
     if(id == undefined){
         const error = "Tienes que especificar un ID válido";
         return [error,null];
     }
-    if (name === undefined || description === undefined || initial_date === undefined || end_date === undefined) {
-        const error = "name, description, initial_date, end_date deben ser definidos";
+    if (name === undefined || description === undefined || start_date === undefined || end_date === undefined) {
+        const error = "name, description, start_date, end_date deben ser definidos";
         return [error, null];
     }
     try {
@@ -54,7 +49,7 @@ const update = async(name, description, initial_date, end_date) => {
         const user= await projectModel.findByPk(id);
         user.name = name;
         user.description = description;
-        user.initial_date = initial_date;
+        user.start_date = start_date;
         user.end_date = end_date;
         return [null,project];
     }

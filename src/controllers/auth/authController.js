@@ -14,14 +14,16 @@ const login = async(req,res) => {
         if(await bcrypt.compare(password,hash)){
             req.session.user_id = user.id
             req.session.user_role = user.role;
-        }    
+        } else {
+            throw new Error("Contraseña errónea")
+        }   
     }
     catch(e){
         const errorUri = encodeURIComponent("credenciales incorrectas");
         return res.redirect("/login?error="+errorUri);
     }
     
-    res.redirect("/projects");
+    res.redirect("/");
 }
 
 const loginForm = (req,res) => {
@@ -30,7 +32,7 @@ const loginForm = (req,res) => {
 }
 
 const register = async(req,res) => {
-    const {name,email,password,role,passwordConfirm} = req.body;
+    const {name,email,password,role,organization_name,passwordConfirm} = req.body;
     if(!name || !email || !password || !role || !passwordConfirm){
         const errorUri = encodeURIComponent("Todos los campos son obligatorios");
         return res.redirect("/register?error=" + errorUri);

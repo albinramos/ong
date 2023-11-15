@@ -9,7 +9,7 @@ import projectsController from "./projectsController.js";
 
 const getById = async (req,res) =>{
     const id = req.params.id;
-    const [error,project] = await projectsController.getById(id);
+    const [error,projects] = await projectsController.getById(id);
     res.render("projects/show",{error,project,session:req.session});
 }
 
@@ -19,8 +19,8 @@ const createForm = (req,res)=>{
 }
 
 const create = (req,res) =>{
-    const {name, description, initial_date, end_date} = req.body;
-    const [error,user] = projectsControllerController.create(name, description, initial_date, end_date);
+    const {name, description, start_date, end_date} = req.body;
+    const [error,user] = projectsControllerController.create(name, description, start_date, end_date);
     if(error){
         const uriError = encodeURIComponent(error);
         return res.redirect(`/projects/new?error=${uriError}`)
@@ -41,8 +41,8 @@ const updateForm = async(req,res) =>{
 const update = (req,res) =>{
     const id = req.params.id;
     console.log("params id",id)
-    const {name, description, initial_date, end_date} = req.body;
-    const [error,project] = projectsController.update(name, description, initial_date, end_date);
+    const {name, description, start_date, end_date} = req.body;
+    const [error,projects] = projectsController.update(name, description, start_date, end_date);
     if(error){
         const uriError = encodeURIComponent(error);
         return res.redirect(`/projects/${id}/edit?error=${uriError}`)
