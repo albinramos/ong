@@ -3,7 +3,7 @@ import userController from "./userController.js";
  const getAll = async (req,res) =>{
     const errorMessage = req.query.error;
     const q = req.query.q;
-    const [error, users] = await userController.getAll(q);
+    const [error, users] = await userController.getAll();
     res.render("users/list",{error,users});
 }
 

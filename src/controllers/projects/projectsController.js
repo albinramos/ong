@@ -2,9 +2,10 @@ import projectModel from "../../models/projectModel.js";
 import {Op} from "sequelize";
 
 
-const getAll = async(id) => {
+const getAll = async() => {
     try{
-        const projects = await projectModel.findAll(options);
+        const projects = await projectModel.findAll();
+        console.log("projects:", projects);
         return [null, projects];
     }catch(e){
         return [e.message,null];
