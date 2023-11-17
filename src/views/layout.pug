@@ -1,14 +1,18 @@
+block vars
 html
   head    
     title ONG 
     link(rel="stylesheet" href="/css/style.css")
   body 
-    nav  
-      a(href="/") Home
-      a(href="/login") Login
-      a(href="/register") Register
-      a(href="/projects/list") Projects 
-      a(href="/logout") Logout
+    nav
+      if !userId
+        a(href="/login") Login
+        a(href="/register") Register
+      if isOwner
+        a(href="/projects/create") Create Project
+      if userId
+        a(href="/projects/list") Projects
+        a(href="/logout") Logout
     block content 
 
     script(type="module", src="/js/global.js")

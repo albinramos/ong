@@ -6,13 +6,16 @@ import projectsController from "./projectsController.js";
     const q = req.query.q;
     const [error, projects] = await projectsController.getAllProjects();
     projectsController.getAllProjects();
-    res.render("projects/list",{error,projects});
-    //res.json(projects);
+    const isUser = req.session.user.role === 'user' ? true : false
+    const isOwner = req.session.user.role === 'owner' ? true : false
+    res.render("projects/list", { error, projects, userId: req.session.user.id, isUser: isUser, isOwner: isOwner });
 }
 
 const createForm = (req,res)=>{
     const error = req.query.error;
-    res.render("projects/create",{error});
+    const isUser = req.session.user.role === 'user' ? true : false
+    const isOwner = req.session.user.role === 'owner' ? true : false
+    res.render("projects/create",{error, userId: req.session.user.id, isUser: isUser, isOwner: isOwner });
 }
 
 const createProject = async (req, res) => {

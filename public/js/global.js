@@ -23,7 +23,8 @@ if(links !== null){
     console.log("hello");
     links.forEach(el => el.addEventListener('click', event => {
         event.preventDefault();
-        const projectId = event.target.getAttribute("data-project")
+        const projectId = event.target.getAttribute("data-project-id");
+        const userId = event.target.getAttribute("data-user-id")
         console.log(event.target.getAttribute("data-project"));
         fetch("http://localhost:3312/users_has_projects/create", 
             {
@@ -32,7 +33,7 @@ if(links !== null){
                     "Content-type": "application/json",
                     "Accept": "application/json"
                 },
-                body: JSON.stringify({ users_id: 1, projects_id: parseInt(projectId) })
+                body: JSON.stringify({ users_id: parseInt(userId), projects_id: parseInt(projectId) })
             }
         )
         .then (data => {

@@ -8,7 +8,9 @@ const router = Router();
 router.use("/", authRouter);
 
 router.get("/", (req,res) => {
-    res.render("home");
+    const isUser = req.session.user.role === 'user' ? true : false
+    const isOwner = req.session.user.role === 'owner' ? true : false
+    res.render("home",{userId: req.session.user.id, isUser: isUser, isOwner: isOwner});
 })
 
 router.use("/users_has_projects", isAuthenticated, usersHasProjectsRouter);

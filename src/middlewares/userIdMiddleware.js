@@ -1,7 +1,9 @@
 
 const userId = (req,res,next) => 
 {
-    req.session.user
+    const user = req.session.user;
+    req.userId = user['id'];
+    next();
 }
 
 export {

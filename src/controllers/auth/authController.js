@@ -22,12 +22,12 @@ const login = async(req,res) => {
         return res.redirect("/login?error="+errorUri);
     }
     
-    res.redirect("/");
+    res.redirect("/projects/list");
 }
 
 const loginForm = (req,res) => {
-    const errorMessage = req.query.error
-    res.render("auth/login",{error:errorMessage});
+    const errorMessage = req.query.error;
+    res.render("auth/login",{error:errorMessage, userId: null, isUser: false, isOwner: false });
 }
 
 const register = async(req,res) => {
@@ -79,12 +79,12 @@ const register = async(req,res) => {
 
 const registerForm = (req,res) => {
     const errorMessage = req.query.error;
-    res.render("auth/register", {error:errorMessage});
+    res.render("auth/register", {error:errorMessage, userId: null, isUser: false, isOwner: false});
 }
 
 const logout = (req,res)=>{
     req.session.destroy();
-    res.redirect("/login");
+    res.redirect("/");
 }
 
 export default{

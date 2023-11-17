@@ -1,5 +1,8 @@
 extends ../layout
-
+block vars
+    - var userId = userId 
+    - var isUser = isUser 
+    - var isOwner = isOwner
 block content 
     h1.title Projects 
     div.flash-message.hidden
@@ -20,4 +23,9 @@ block content
                             td= project.description
                             td= project.start_date
                             td= project.end_date
-                                a.join(data-project=`${project.id}`, href="#") Join
+                                a.join(
+                                    data-project-id=`${project.id}`,
+                                    data-project-name=`${project.name}`,
+                                    data-user-id=`${userId}`,
+                                    href="#"
+                                ) Join
