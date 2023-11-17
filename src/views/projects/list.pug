@@ -2,6 +2,7 @@ extends ../layout
 
 block content 
     h1.title Projects 
+    div.flash-message.hidden
     if error 
         h2 No se ha podido recuperar el historial
     else if projects 
@@ -19,4 +20,4 @@ block content
                             td= project.description
                             td= project.start_date
                             td= project.end_date
-                                input(type="submit", value="Join", id="join")
+                                a.join(data-project=`${project.id}`, href="#") Join

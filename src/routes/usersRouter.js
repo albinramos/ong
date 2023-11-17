@@ -6,6 +6,7 @@ import {isAuthenticated} from "../middlewares/authMiddleware.js";
 
 const router = Router();
 
+
 router.get("/",isAuthenticated, (req,res)=>{
     userViewController.getAll(req,res);
 });

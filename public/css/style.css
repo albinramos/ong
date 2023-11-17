@@ -22,6 +22,27 @@ body{
     margin-bottom: 20px;
 }
 
+.form-create-project{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    
+}
+
+#name, #description, #start_date, #end_date{
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 15px;
+}
+
+#owner{
+    margin-bottom: 60px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
 #email, #password{
     margin-bottom: 10px;
 }

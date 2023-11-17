@@ -2,6 +2,8 @@ import { DataTypes } from "sequelize";
 
 import sequelize from "../config/sequelize.js";
 
+import projectModel from "./projectModel.js";
+
 const userModel = sequelize.define("users",
 {
     id:{
@@ -34,5 +36,7 @@ const userModel = sequelize.define("users",
         unique:true,
     }
 })
+
+projectModel.belongsToMany(userModel, { through: 'UsersHasProjects', foreignKey: 'users_id'});
 
 export default userModel;

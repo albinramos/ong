@@ -36,7 +36,7 @@ VALUES
   
   SELECT * FROM projects;
   
-  INSERT INTO users_has_projects (users_id, projects_id)
+  INSERT INTO users_projects (users_id, projects_id)
   VALUES
   ('5','1'),
   ('5','3'),

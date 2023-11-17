@@ -1,8 +1,8 @@
-import cochesModel from "../../models/userModel.js";
+import userModel from "../../models/userModel.js";
 import {Op} from "sequelize";
 
 
-const getAll = async(q=null) => {
+const getAllUsers = async(q=null) => {
     const options = {};
 
     if(q) {
@@ -31,7 +31,7 @@ const create = async (name, email, password, role, organization_name) => {
         return [error, null];
     }
     try{
-        const coche = await userModel.create({name, email, password, role, organization_name});
+        const user = await userModel.create({name, email, password, role, organization_name});
         return [null,user];
     }
     catch(e){
@@ -79,7 +79,7 @@ const remove = async (id) => {
 }
 
 export {
-    getAll,
+    getAllUsers,
     getById,
     create,
     update,
@@ -89,7 +89,7 @@ export {
 
 
 export default {
-    getAll,
+    getAllUsers,
     getById,
     create,
     update,

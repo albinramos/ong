@@ -2,10 +2,10 @@ import projectModel from "../../models/projectModel.js";
 import {Op} from "sequelize";
 
 
-const getAll = async() => {
+const getAllProjects = async() => {
     try{
         const projects = await projectModel.findAll();
-        console.log("projects:", projects);
+        //console.log("projects:", projects);
         return [null, projects];
     }catch(e){
         return [e.message,null];
@@ -21,19 +21,29 @@ const getById = async (id) => {
         return [e.message, null];
     }
 }
-const create = async (name, description, start_date, end_date) => {
+const createProject = async (name, description, start_date, end_date) => {
     if (name === undefined || description === undefined || start_date === undefined || end_date === undefined) {
         const error = "name, description, start_date, end_date deben ser definidos";
         return [error, null];
     }
-    try{
-        const project = await userModel.create({name, description, start_date, end_date});
-        return [null,project];
-    }
-    catch(e){
+    try {
+        const project = await projectModel.create({
+            name,
+            description,
+            start_date,
+            end_date,
+        });
+
+        // Assuming UsersHasProjects is the model for the middle table
+        await UsersHasProjects.create({
+            users_id,
+        });
+
+        return [null, project];
+    } catch (e) {
         return [e.message, null];
     }
-}
+};
 
 const update = async(name, description, start_date, end_date) => {
     
@@ -75,9 +85,9 @@ const remove = async (id) => {
 }
 
 export {
-    getAll,
+    getAllProjects,
     getById,
-    create,
+    createProject,
     update,
     remove
 };
@@ -85,9 +95,9 @@ export {
 
 
 export default {
-    getAll,
+    getAllProjects,
     getById,
-    create,
+    createProject,
     update,
     remove
 };
