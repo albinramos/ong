@@ -20,8 +20,8 @@ router.post("/create", isAuthenticated, (req,res)=>{
     projectsViewController.createProject(req,res);
 });
 
-router.get("/felicidades",isAuthenticated,(req,res)=>{
-    projectsViewController.createProject(req,res);
+router.get("/congratulations",isAuthenticated,(req,res)=>{
+    projectsViewController.congratulations(req,res);
 });
 
 export default router;

@@ -18,7 +18,6 @@ try {
         }
         res.json(model);
     } catch (e) {
-        // Manejo de errores
         console.error(e);
         res.status(500).send("Error interno del servidor");
     }

@@ -6,13 +6,13 @@ html
   body 
     nav
       if !userId
-        a(href="/login") Login
-        a(href="/register") Register
+        a.nav-a(href="/login") Login
+        a.nav-a(href="/register") Register
       if isOwner
-        a(href="/projects/create") Create Project
+        a.nav-a(href="/projects/create") Create Project
       if userId
-        a(href="/projects/list") Projects
-        a(href="/logout") Logout
+        a.nav-a(href="/projects/list") Projects
+        a.nav-a(href="/logout") Logout
     block content 
 
     script(type="module", src="/js/global.js")

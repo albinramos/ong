@@ -40,13 +40,13 @@ if(links !== null){
             const messageContainer = document.getElementsByClassName("flash-message")[0];
             messageContainer.classList.add("success");
             messageContainer.classList.remove("hidden");
-            messageContainer.innerHTML = "You have been susbribed to the project";
+            messageContainer.innerHTML = "Thank you! You have been susbribed to the project";
         })
         .catch (error => {
             const messageContainer = document.getElementsByClassName("flash-message")[0];
             messageContainer.classList.add("error");
             messageContainer.classList.remove("hidden");
-            messageContainer.innerHTML = "Can not subscribe to this project";
+            messageContainer.innerHTML = "You can't subscribe to the project again";
         })
         
         

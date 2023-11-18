@@ -4,12 +4,12 @@ block vars
     - var isUser = isUser 
     - var isOwner = isOwner
 block content 
-    h1.title Projects 
+    h1.title PROJECTS 
     div.flash-message.hidden
     if error 
         h2 No se ha podido recuperar el historial
     else if projects 
-        ul 
+        ul.ul-list 
             table 
                 thead 
                     th.th-th Name:

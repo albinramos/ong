@@ -5,8 +5,131 @@
 }
 
 body{
-    background-color: antiquewhite;
+    
     font-family: 'Raleway', sans-serif;
+    background-image: url(../img/hom3.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.login-div, .register-div{
+    background-color: #5eaf2c64;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    width:80%;
+    margin: auto;
+}
+
+.flash-message{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+    color: #2e5612;
+    background-color: #fbfbfb84;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.lineUp, .title-register{
+    text-align: center;
+    align-items: center;
+    font-size: 75px;
+    color: #2e5612;
+    animation: 4s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.login-title{
+    text-align: center;
+    align-items: center;
+    font-size: 75px;
+    color: #2e5612;
+    animation: 4s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.title-new-project{
+    text-align: center;
+    align-items: center;
+    font-size: 75px;
+    color: #2e5612;
+    animation: 4s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.title{
+    text-align: center;
+    align-items: center;
+    font-size: 75px;
+    color: #2e5612;
+    animation: 4s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 .title{
@@ -14,7 +137,7 @@ body{
     text-align: center;
 }
 
-.login-form{
+.login-form, .register-form{
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -50,11 +173,46 @@ body{
 .label-email-login, .label-password-login{
     margin-bottom: 20px;
     text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fbfbfb;
 }
 
-.submit-login{
+.label-name-register, .label-role-register,.label-email-register, .label-password-register, .label-password-confirm-register, #org_label {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fbfbfb;
+}
+
+#org_label, .label-email-register {
+    margin-top: 10px;
+}
+
+.submit-login, .button-class{
     width: 30%;
     margin: auto;
+    font-size: 15px;
+    background-color: #2e5612;
+    color: #fbfbfb;
+    transition: width 0.5s;
+}
+
+.button-class{
+    margin-top: 20px;
+}
+
+.submit-login:hover{
+    border-radius: 20px;
+    font-size: 15px;
+    width: 27%;
+}
+
+.button-class:hover{
+    border-radius: 20px;
+    font-size: 15px;
+    width: 27%;
 }
 
 input{
@@ -62,9 +220,49 @@ input{
     border-radius: 5px;
 }
 
-a{
+nav{
+    text-align: right;
+}
+
+.nav-a{
     text-decoration: none;
     padding-right: 10px;
+    justify-content: right;
+    color: #2e5612;
+    font-size: 25px;
+    right: 0px;
+    padding-left: 10px;
+}
+
+.register-a{
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fbfbfb;
+    font-size: 25px;
+}
+
+.account-register{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-title{
+    text-align: center;
+}
+
+.ul-list{
+    background-color: #5eaf2c64;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.register-p{
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
 }
 
 .tr-tr{

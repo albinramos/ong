@@ -21,13 +21,14 @@ const getById = async (id) => {
         return [e.message, null];
     }
 }
-const createProject = async (name, description, start_date, end_date) => {
-    if (name === undefined || description === undefined || start_date === undefined || end_date === undefined) {
-        const error = "name, description, start_date, end_date deben ser definidos";
+const createProject = async (name, description, start_date, end_date, users_id) => {
+    if (name === undefined || description === undefined || start_date === undefined || end_date === undefined || users_id === undefined) {
+        const error = "name, description, start_date, end_date, users_id deben ser definidos";
         return [error, null];
     }
     try {
         const project = await projectModel.create({
+            users_id,
             name,
             description,
             start_date,
@@ -35,7 +36,7 @@ const createProject = async (name, description, start_date, end_date) => {
         });
 
         return [null, project];
-        
+
     } catch (e) {
         return [e.message, null];
     }
