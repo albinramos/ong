@@ -15,12 +15,10 @@ router.get("/", (req,res) => {
 
 router.use("/users_has_projects", isAuthenticated, usersHasProjectsRouter);
 
-router.use("/users_has_projects/create", usersHasProjectsRouter);
+//router.use("/users_has_projects/create", usersHasProjectsRouter);
 
 router.use("/projects",isAuthenticated, projectsRouter);
 
 router.use("/projects/create",projectsRouter);
-
-//console.log(router.stack);
 
 export default router;

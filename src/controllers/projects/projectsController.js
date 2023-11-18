@@ -34,12 +34,8 @@ const createProject = async (name, description, start_date, end_date) => {
             end_date,
         });
 
-        // Assuming UsersHasProjects is the model for the middle table
-        await UsersHasProjects.create({
-            users_id,
-        });
-
         return [null, project];
+        
     } catch (e) {
         return [e.message, null];
     }
