@@ -27,7 +27,7 @@ const createProject = async (name, description, start_date, end_date, users_id) 
         return [error, null];
     }
     try {
-        const project = await projectModel.create({
+        const projects = await projectModel.create({
             users_id,
             name,
             description,
@@ -35,7 +35,7 @@ const createProject = async (name, description, start_date, end_date, users_id) 
             end_date,
         });
 
-        return [null, project];
+        return [null, projects];
 
     } catch (e) {
         return [e.message, null];

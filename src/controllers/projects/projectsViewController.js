@@ -19,27 +19,28 @@ const createForm = (req,res)=>{
 }
 
 const createProject = async (req, res) => {
-    try {
-        const { name, description, start_date, end_date, users_id } = req.body;
-        const [error, project] = await projectsController.createProject(users_id, name, description, start_date, end_date);
-        
-        if (error) {
-            const uriError = encodeURIComponent(error);
-            //console.log("holaaaaaa");
-            return res.redirect(`/projects/new?error=${uriError}`);
-        }
-        res.redirect("projects/congratulations");
+    const { name, description, start_date, end_date } = req.body;
+    console.log("Request Body:", req.body);
+    
+    // Cambia de req.session.users_id a req.session.user.id
+    const users_id = req.session.user.id;
+    //console.log("Request:", req.session);
+    
+    const [error, project] = await projectsController.createProject(name, description, start_date, end_date, users_id);
+    //console.log("Error:", error);
+    //console.log("Projects:", project);
 
-    } catch (e) {
-        // Manejo de errores
-        console.error(e);
-        res.status(500).send("Error interno del servidorrrrrrrr");
+    if (error) {
+        const uriError = encodeURIComponent(error);
+        console.log("Redirecting with error:", error);
+        return res.redirect(`/projects/congratulations?error=${uriError}`);
     }
+    res.redirect("/projects/congratulations");
 };
 
 const congratulations = (req, res)=>{
     const error = req.query.error;
-    res.render("parking/congratulations",{error:error});
+    res.render("projects/congratulations",{error:error});
 }
 
 

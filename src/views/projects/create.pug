@@ -9,13 +9,13 @@ block content
     if error 
         p(class="error", style="color:red;")= error 
     form.form-create-project(action="/projects/create", method="post")
-        label(for="name") Name
+        label.label-name-createproject(for="name") Name
         input(type="text", name="name", id="name")
-        label(for="description") Description
+        label.label-description-createproject(for="description") Description
         textarea(name="description", cols="30", rows="10", id="description")
-        label(for="start_date") Start Date
+        label.label-start-createproject(for="start_date") Start Date
         input(type="date", name="start_date", id="start_date")
-        abel(for="end_date") End Date
+        label.label-end-createproject(for="end_date") End Date
         input(type="date", name="end_date", id="end_date")
-        input(type="submit", value="Create New Project")
+        input.submit-create(type="submit", value="CREATE NEW PROJECT")
     
