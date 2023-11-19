@@ -2,6 +2,7 @@ import { Router } from "express";
 import authRouter from "./authRouter.js";
 import usersHasProjectsRouter from "./usersHasProjectsRouter.js";
 import projectsRouter from "./projectsRouter.js";
+import usersRouter from "./usersRouter.js";
 import { isAuthenticated } from "../middlewares/authMiddleware.js";
 const router = Router();
 
@@ -22,5 +23,8 @@ router.use("/projects",isAuthenticated, projectsRouter);
 router.use("/projects/create",projectsRouter);
 
 router.use("/projects/congratulations",projectsRouter);
+
+router.use("/users", usersRouter);
+
 
 export default router;
