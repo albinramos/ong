@@ -5,6 +5,7 @@ block vars
     - var isOwner = isOwner
 
 block content
-    h1 Congratulations
+    h1.congratulations-title CONGRATULATIONS!
     if error 
         p(class="error", style="color:red;")= error 
+    p.congratulations-p You have created a new project!

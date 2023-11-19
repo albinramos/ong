@@ -21,4 +21,6 @@ router.use("/projects",isAuthenticated, projectsRouter);
 
 router.use("/projects/create",projectsRouter);
 
+router.use("/projects/congratulations",projectsRouter);
+
 export default router;

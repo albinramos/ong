@@ -32,6 +32,41 @@ body{
     padding: 20px;
 }
 
+.congratulations-p{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+    color: #2e5612;
+    background-color: #fbfbfb84;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.congratulations-title{
+  text-align: center;
+  align-items: center;
+  font-size: 60px;
+  color: #2e5612;
+  animation: 4s anim-lineUp ease-out;
+}
+@keyframes anim-lineUp {
+0% {
+  opacity: 0;
+  transform: translateY(80%);
+}
+20% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+  transform: translateY(0%);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0%);
+}
+}
+
 .lineUp, .title-register{
     text-align: center;
     align-items: center;
