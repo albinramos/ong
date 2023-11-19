@@ -46,7 +46,7 @@ npm install
 npm start
 
 6. **Accede a la Aplicación a través del Navegador:**
-[http://localhost:3008](http://localhost:3008)
+[http://localhost:3312](http://localhost:3312)
 
 ### Contribución
 
