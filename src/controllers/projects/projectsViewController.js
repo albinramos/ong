@@ -21,15 +21,12 @@ const createForm = (req,res)=>{
 const createProject = async (req, res) => {
     const { name, description, start_date, end_date } = req.body;
     console.log("Request Body:", req.body);
-    
     // Cambia de req.session.users_id a req.session.user.id
     const users_id = req.session.user.id;
     //console.log("Request:", req.session);
-    
     const [error, project] = await projectsController.createProject(name, description, start_date, end_date, users_id);
     //console.log("Error:", error);
     //console.log("Projects:", project);
-
     if (error) {
         const uriError = encodeURIComponent(error);
         console.log("Redirecting with error:", error);
@@ -40,7 +37,9 @@ const createProject = async (req, res) => {
 
 const congratulations = (req, res)=>{
     const error = req.query.error;
-    res.render("projects/congratulations",{error:error});
+    const isUser = req.session.user.role === 'user' ? true : false
+    const isOwner = req.session.user.role === 'owner' ? true : false
+    res.render("projects/congratulations", { error, userId: req.session.user.id, isUser: isUser, isOwner: isOwner });
 }
 
 

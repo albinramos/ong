@@ -22,7 +22,7 @@ router.use("/projects",isAuthenticated, projectsRouter);
 
 router.use("/projects/create",projectsRouter);
 
-router.use("/projects/congratulations",projectsRouter);
+router.use("/projects/congratulations",isAuthenticated, projectsRouter);
 
 router.use("/users", usersRouter);
 

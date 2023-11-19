@@ -29,7 +29,7 @@ body{
     color: #2e5612;
     background-color: #fbfbfb84;
     border-radius: 10px;
-    padding: 20px;
+    padding: 50px;
 }
 
 .congratulations-p{
@@ -40,6 +40,7 @@ body{
     background-color: #fbfbfb84;
     border-radius: 10px;
     padding: 20px;
+    margin: 25px;
 }
 
 .congratulations-title{
@@ -244,7 +245,7 @@ body{
 }
 
 .submit-create{
-  width: 70%;
+  width: 75%;
   margin: auto;
   font-size: 15px;
   background-color: #2e5612;
@@ -263,7 +264,7 @@ body{
 .submit-create:hover{
   border-radius: 20px;
     font-size: 15px;
-    width: 67%;
+    width: 70%;
 }
 
 .submit-login:hover{
@@ -320,6 +321,8 @@ nav{
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .register-p{
@@ -330,10 +333,14 @@ nav{
 
 .tr-tr{
     padding: 10px;
+    text-align: center;
 }
 
-#join{
+.join{
     text-align: center;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #fbfbfb;
 
 }
 
@@ -344,6 +351,7 @@ thead{
 .th-th{
     font-size: 15px;
     width: 10%;
+    text-align: center;
 }
 
 /* .tr-tr{
