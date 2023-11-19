@@ -20,7 +20,7 @@ if(roleInput !== null){
 const links = document.querySelectorAll('.join');
 if(links !== null){
     
-    console.log("hello");
+    //console.log("hello");
     links.forEach(el => el.addEventListener('click', event => {
         event.preventDefault();
         const projectId = event.target.getAttribute("data-project-id");
