@@ -26,3 +26,31 @@ Volunteams es una plataforma diseñada para facilitar la participación en proye
 
 1. **Clona este Repositorio:**
 
+git@github.com:albinramos/ong.git
+
+2. **Configura las Variables de Entorno:**
+
+- Crea un archivo `.env` en la raíz del proyecto. Puedes ver la plantilla `.env.example` para rellenar tu `.env`.
+- Completa las variables de entorno con la información necesaria.
+
+3. **Inicializa la Aplicación Utilizando Docker Compose:**
+docker-compose up --build
+
+markdown
+Copy code
+
+4. **Instala las Dependencias:**
+npm install
+
+5. **Ejecuta la Aplicación:**
+npm start
+
+6. **Accede a la Aplicación a través del Navegador:**
+[http://localhost:3008](http://localhost:3008)
+
+### Contribución
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto, abre un pull request y colabora en el desarrollo de una plataforma más efectiva para la promoción y gestión de proyectos de voluntariado.
+
+¡Únete a Volunteams y contribuye al cambio positivo en tu comunidad!
+
