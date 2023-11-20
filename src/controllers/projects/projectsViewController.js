@@ -3,11 +3,14 @@ import projectsController from "./projectsController.js";
  const getAllProjects = async (req,res) =>{
     //console.log(req.session);
     const errorMessage = req.query.error;
+    // Obtener el parámetro de búsqueda de la consulta
     const q = req.query.q;
     const [error, projects] = await projectsController.getAllProjects();
     projectsController.getAllProjects();
+    // Verificar el rol del usuario y establecer variables booleanas
     const isUser = req.session.user.role === 'user' ? true : false
     const isOwner = req.session.user.role === 'owner' ? true : false
+    // Renderizar la página de la lista de proyectos con la información obtenida
     res.render("projects/list", { error, projects, userId: req.session.user.id, isUser: isUser, isOwner: isOwner });
 }
 
@@ -43,7 +46,7 @@ const congratulations = (req, res)=>{
 }
 
 
-
+// Exportar todas las funciones como un objeto
 
 export default{
     getAllProjects,

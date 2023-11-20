@@ -7,7 +7,6 @@ import router from "./routes/router.js";
 dotenv.config();
 
 const app = express();
-//app.use(cors());
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -19,9 +18,7 @@ app.use(session({
     }
 }))
 
-// Configura el middleware para servir archivos estáticos desde el directorio "public".
 app.use(express.static("public"));
-//Vistas
 
 app.set('views', './src/views');
 app.set('view engine', 'pug');
